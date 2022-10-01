@@ -12,17 +12,9 @@ pipeline {
   }*/
 
   stages {
-    stage('stop') {
-      steps {
-        git branch: 'master', url: 'https://github.com/JavierArevalo02/node-hello.git'
-        dir('node-hello') {
-          sh 'npm stop'
-        }
-      }
-    }
-
     stage('prepare') {
       steps {
+        git branch: 'master', url: 'https://github.com/JavierArevalo02/node-hello.git'
         dir('node-hello') {
           sh 'npm install'
         }
