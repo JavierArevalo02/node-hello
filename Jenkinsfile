@@ -5,18 +5,17 @@ pipeline {
     nodejs "Endava"
   }
 
-  /*parameters {
+  parameters {
     string(name: 'install', defaultValue: 'npm install', description: 'Installar dependencias')
     string(name: 'start', defaultValue: 'npm start', description: 'Ejecutar index.js')
-    string(name: 'stop', defaultValue: 'npm stop', description: 'parar ejecucion index.js')
-  }*/
+  }
 
   stages {
     stage('prepare') {
       steps {
         git branch: 'master', url: 'https://github.com/JavierArevalo02/node-hello.git'
         dir('node-hello') {
-          sh 'npm install'
+          sh '${install}'
         }
       }
     }
@@ -24,7 +23,7 @@ pipeline {
     stage('deploy') {
       steps {
         dir('node-hello') {
-          sh 'npm start'
+          sh '${start}'
         }
       }
     }
