@@ -6,4 +6,4 @@ RUN npm ci
 COPY . .
 EXPOSE ${PORT}
 ENV PORT ${PORT}
-CMD node server.js
+CMD node index.js
