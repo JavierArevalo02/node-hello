@@ -22,10 +22,8 @@ pipeline {
 
     stage('build') {
       steps {
-        dir('node-hello') {
-          script {
-            sh 'docker build -t ${image_name}:${tag_image} .'
-          }
+        script {
+          sh 'docker build -t ${image_name}:${tag_image} .'
         }
       }
     }
