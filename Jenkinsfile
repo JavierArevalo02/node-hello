@@ -23,14 +23,21 @@ pipeline {
     stage('build') {
       steps {
         script {
-          sh 'docker build -t ${image_name}:${tag_image} .'
+           try {
+              sh 'docker stop ${container_name}'
+              sh 'docker rm ${container_name}'
+              sh 'docker rmi ${image_name}:${tag_image}'
+            } catch (Exception e) {
+              echo 'Exception occurred: ' + e.toString()
+            }
         }
+        sh 'docker build -t ${image_name}:${tag_image} .'
       }
     }
 
     stage('deploy'){
       steps{
-        sh 'docker run -d -p ${container_port}:3000 --name ${container_name} ${image_name}:${tag_image}'
+        sh 'docker run -d -p 8081:${container_port} --name ${container_name} ${image_name}:${tag_image}'
       }
     }
   }
