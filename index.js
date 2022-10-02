@@ -9,4 +9,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}/`);
+  console.log('este es un cambio para ver sis e actualiza automaticamente')
 });
