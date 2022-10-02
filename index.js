@@ -3,11 +3,10 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello Node!\n'
+  const msg = 'Hello Node!\n este es un cambio para ver si se actualiza automaticamente'
   res.end(msg);
 });
 
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}/`);
-  console.log('este es un cambio para ver sis e actualiza automaticamente')
 });
