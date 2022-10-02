@@ -23,14 +23,6 @@ pipeline {
     stage('build') {
       steps {
         script {
-           try {
-              sh 'docker stop ${container_name}'
-              sh 'docker rm ${container_name}'
-              sh 'docker rmi ${image_name}:${tag_image}'
-            } catch (Exception e) {
-              echo 'Exception occurred: ' + e.toString()
-            }
-          }
           sh 'docker build -t ${image_name}:${tag_image} .'
         }
       }
@@ -42,3 +34,4 @@ pipeline {
       }
     }
   }
+}
