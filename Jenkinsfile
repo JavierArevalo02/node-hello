@@ -5,8 +5,8 @@ pipeline {
     nodejs "Endava"
   }
   parameters {
-    string(name: 'container_name', defaultValue: 'HomeworkEndava', description: 'Nombre del contenedor de docker.')
-    string(name: 'image_name', defaultValue: 'nodeEndava', description: 'Nombre de la imagene docker.')
+    string(name: 'container_name', defaultValue: 'homework_endava', description: 'Nombre del contenedor de docker.')
+    string(name: 'image_name', defaultValue: 'node_endava', description: 'Nombre de la imagene docker.')
     string(name: 'tag_image', defaultValue: 'endava', description: 'Tag de la imagen de la página.')
     string(name: 'container_port', defaultValue: '3000', description: 'Puerto que usa el contenedor')
   }
