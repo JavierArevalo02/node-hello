@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs "Endava"
+    nodejs "nodejs-6.9.4"
   }
   parameters {
     string(name: 'container_name', defaultValue: 'homework_endava', description: 'Nombre del contenedor de docker.')
