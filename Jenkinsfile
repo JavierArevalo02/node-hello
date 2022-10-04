@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs "nodejs"
+    nodejs "nodejs-10.19.0"
   }
 
   parameters {
