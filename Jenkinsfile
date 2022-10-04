@@ -2,9 +2,8 @@ pipeline {
   agent any
 
   tools {
-    nodejs "nodejs-10.19.0"
+    nodejs "nodejs-10.5.0"
   }
-
   parameters {
     string(name: 'container_name', defaultValue: 'homework_endava', description: 'Nombre del contenedor de docker.')
     string(name: 'image_name', defaultValue: 'node_endava', description: 'Nombre de la imagene docker.')
